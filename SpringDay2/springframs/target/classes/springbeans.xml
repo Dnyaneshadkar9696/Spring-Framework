@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Bean configuration -->
+
+	<!-- here basically we add beans in the Application context -->
+
+	<!-- The application context allows us the use xml as well as annotation 
+		based configuration -->
+
+
+
+	<bean id="collegeid" class="com.entity.College">
+		<property name="id" value="2"></property>
+		<property name="name" value="suraj"></property>
+		<property name="location" value="Gujrat"></property>
+
+
+	</bean>
+
+	<bean id="std" class="com.entity.Student">
+
+		<!-- <property name="stdID" value="1"></property> <property name="stdName" 
+			value="Ganesh"></property> <property name="stdCity" value="Pune"></property> -->
+
+
+		<!-- and now the dependency injections merging the properties of one class 
+			inanoter and accssiong them through that one class -->
+
+		<!-- <property name="collegeid" ref="collegeid"></property> -->
+		<!-- Reference is nothidn but the id of another calss and make shore the 
+			to string of the Di class has all the gobal variables -->
+
+
+		<constructor-arg index="0" value="1"></constructor-arg>
+		<constructor-arg index="1" value="Rupesh"></constructor-arg>
+		<constructor-arg index="2" value="Nagpur"></constructor-arg>
+		<constructor-arg index="3" ref="collegeid"></constructor-arg>
+
+
+
+
+
+	</bean>
+
+
+
+</beans>
